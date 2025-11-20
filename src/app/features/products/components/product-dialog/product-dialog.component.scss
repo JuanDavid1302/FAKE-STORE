@@ -1,0 +1,14 @@
+.product-dialog {
+  &__content {
+    min-width: 360px;
+  }
+}
+
+.product-form {
+  display: grid;
+  gap: 0.75rem;
+
+  &__field {
+    width: 100%;
+  }
+}

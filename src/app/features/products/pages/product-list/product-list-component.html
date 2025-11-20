@@ -1,0 +1,26 @@
+<div class="product-list">
+  <mat-toolbar class="product-list__toolbar" color="primary">
+    <span class="product-list__tittle">Marketplace</span>
+    <span class="product-list__spacer"></span>
+    <button mat-flat-button color="accent" (click)="openCreateDialog()">Crear producto</button>
+  </mat-toolbar>
+
+  <div class="product-list__grid">
+    <mat-card class="product-card" *ngFor="let p of products()">
+      <img mat-card-image [src]="p.image" alt="{{ p.title }}" class="product-card__image" />
+      <mat-card-content>
+        <h3 class="product-card__title">{{ p.title }}</h3>
+        <p class="product-card__category">{{ p.category }}</p>
+        <p class="product-card__price">${{ p.price }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-icon-button color="warn" (click)="openEditDialog(p)" aria-label="Editar">
+          <mat-icon class="product-card__edit">edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteProduct(p.id)" aria-label="Eliminar">
+          <mat-icon class="product-card__delete">delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
